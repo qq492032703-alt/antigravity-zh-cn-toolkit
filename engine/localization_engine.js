@@ -434,6 +434,12 @@ function generateJs() {
                 let newVal = originalVal;
                 const valNorm = norm(originalVal);
                 const valLower = valNorm.toLowerCase();
+                const welcome = valNorm.match(/^Good to see you, (.+)\\. What's next\\?$/);
+                if (welcome) {
+                    node.nodeValue = (USE_TW ? '很高興見到你，' : '很高兴见到你，') + welcome[1] + (USE_TW ? '。接下來做什麼？' : '。接下来做什么？');
+                    translatedValues.set(node, node.nodeValue);
+                    return;
+                }
                 
                 // Match the complete availability notice, retaining the model name and date.
                 const availabilityNotice = valNorm.match(/^(.+?) is now available on paid Pro and Ultra plans\\. Third-party model access will no longer be available on your current plan starting on ([A-Za-z]+) (\\d{1,2}), (\\d{4})\\.$/);
