@@ -1,5 +1,9 @@
 {
   "Unavailable": "不可用",
+  "Select project, current:": "选择项目，当前：",
+  "Select model, current:": "选择模型，当前：",
+  "Agent permissions preset selector, current:": "选择智能体权限预设，当前：",
+  "Start Voice mode": "启动语音模式",
   "High": "高",
   "Medium": "中",
   "Low": "低",

@@ -309,11 +309,18 @@ function generateJs() {
                         const t = norm(v);
                         if (isFilePathOrUri(t)) continue;
                         let newAttr = null;
+                        const selector = attr === 'aria-label' && t.match(/^(Select project, current:|Select model, current:|Agent permissions preset selector, current:) (.+)$/);
                         const shortcutTrans = translateWithShortcut(t);
                         if (shortcutTrans) newAttr = shortcutTrans;
                         else if (map.has(t)) newAttr = map.get(t);
                         else if (lowerMap.has(t.toLowerCase())) newAttr = lowerMap.get(t.toLowerCase());
-                        else if (/^Show\\s+(\\d+)\\s+more/i.test(t)) {
+                        else if (selector && map.has(selector[1])) {
+                                const selected = selector[2];
+                                const selectedLabel = selector[1] === 'Select project, current:'
+                                    ? (selected === 'No Project' ? (map.get(selected) || selected) : selected)
+                                    : (map.get(selected) || selected);
+                                newAttr = map.get(selector[1]) + selectedLabel;
+                        } else if (/^Show\\s+(\\d+)\\s+more/i.test(t)) {
                             newAttr = t.replace(/^Show\\s+(\\d+)\\s+more(\\s+(results?|items?|commands?|options?))?(\\.\\.\\.|…)?$/i, (m, num, p2, type) => {
                                 if (type) {
                                     if (/result/i.test(type)) return USE_TW ? ("顯示另外 " + num + " 個結果...") : ("显示另外 " + num + " 个结果...");
