@@ -434,7 +434,8 @@ function generateJs() {
                 let newVal = originalVal;
                 const valNorm = norm(originalVal);
                 const valLower = valNorm.toLowerCase();
-                const welcome = valNorm.match(/^Good to see you, (.+)\\. What's next\\?$/);
+                const welcome = valNorm.match(/^Good to see you, (.+)\\. What's next\\?$/)
+                    || valNorm.match(/^Hey (.+), what should we build today\\?$/);
                 if (welcome) {
                     node.nodeValue = (USE_TW ? '很高興見到你，' : '很高兴见到你，') + welcome[1] + (USE_TW ? '。接下來做什麼？' : '。接下来做什么？');
                     translatedValues.set(node, node.nodeValue);
