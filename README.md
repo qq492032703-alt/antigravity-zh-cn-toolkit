@@ -1,6 +1,6 @@
 # Antigravity 简体中文补丁工具包
 
-汉化引擎和基础词典源自 [qqxpee/antigravity2-cn](https://github.com/qqxpee/antigravity2-cn)，此工具包加入了本地维护、回滚和补译规则。上游仓库未标明开源许可证，此副本用于私有备份。
+汉化引擎和基础词典源自 [qqxpee/antigravity2-cn](https://github.com/qqxpee/antigravity2-cn)，此工具包加入了本地维护、回滚和补译规则。上游仓库未标明开源许可证，公开可见不代表相关文件获得了开源授权。
 
 本工具包在目标电脑本机的 Antigravity 原始 `app.asar` 上生成简体中文补丁。它不附带 Antigravity 程序、账号信息、会话数据或其他人的备份文件。
 
