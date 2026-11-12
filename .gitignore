@@ -1,0 +1,5 @@
+/backups/
+/work/
+/state.json
+*.asar
+*.asar.unpacked/
