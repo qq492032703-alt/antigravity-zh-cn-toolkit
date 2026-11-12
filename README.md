@@ -30,3 +30,8 @@
 ## 供智能体处理更新
 
 查看 `AGENT_INSTRUCTIONS.md`。更新后必须从该电脑的当前 `app.asar` 重新构建，禁止用旧版 `app.asar` 覆盖新版。
+
+## 许可证
+
+原创的 `应用汉化.ps1`、`恢复英文.ps1`、`README.md` 和 `AGENT_INSTRUCTIONS.md` 采用 [MIT 许可证](LICENSE-MIT.txt)。
+`engine/` 中的汉化引擎和词典沿用各自权利人的授权，本仓库的 MIT 许可证不适用于这些文件。
